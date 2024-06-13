@@ -1,0 +1,71 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Forging_calculation/1.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "9.0.0-preview.5.24306.5"
+        },
+        "runtime": {
+          "Forging_calculation.dll": {}
+        }
+      },
+      "Microsoft.Win32.SystemEvents/9.0.0-preview.5.24306.7": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30607"
+          }
+        }
+      },
+      "System.Drawing.Common/9.0.0-preview.5.24306.5": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "9.0.0-preview.5.24306.7"
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30605"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.30605"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Forging_calculation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Win32.SystemEvents/9.0.0-preview.5.24306.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L+eN7hSngC+kgPNy7jzKedIj8NXH6bdiKN+dwWJytfUhTMbzyLqKV/pA9lGSWWwLoDGbawncERrgcK0HnnOA/Q==",
+      "path": "microsoft.win32.systemevents/9.0.0-preview.5.24306.7",
+      "hashPath": "microsoft.win32.systemevents.9.0.0-preview.5.24306.7.nupkg.sha512"
+    },
+    "System.Drawing.Common/9.0.0-preview.5.24306.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tPnVBXlBlBFH0YL4uhhp6WphjJG+8XpH9SuDNUWbfdMJ6Hab9DUJFUg/fOnTFlAS3SWyGIFGJ4vx9VGbLIlz2w==",
+      "path": "system.drawing.common/9.0.0-preview.5.24306.5",
+      "hashPath": "system.drawing.common.9.0.0-preview.5.24306.5.nupkg.sha512"
+    }
+  }
+}

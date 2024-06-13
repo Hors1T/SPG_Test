@@ -1,0 +1,44 @@
+@page
+@model Forging_calculation.Pages.Questionnaire
+
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<h2>Анкета</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="D">D</label>
+        <input type="number" class="form-control" id="D" name="D" />
+    </div>
+    <div class="form-group">
+        <label for="d">d</label>
+        <input type="number" class="form-control" id="d" name="d" />
+    </div>
+    <div class="form-group">
+        <label for="H">H</label>
+        <input type="number" class="form-control" id="H" name="H" />
+    </div>
+    <div class="form-group">
+        <label for="x">x</label>
+        <input type="number" class="form-control" id="x" name="x" />
+    </div>
+    <div class="form-group">
+        <label for="y">y</label>
+        <input type="number" class="form-control" id="y" name="y" />
+    </div>
+    <div class="form-group">
+        <label for="z">z</label>
+        <input type="number" class="form-control" id="z" name="z" />
+    </div>
+    <div class="form-group">
+        <label for="Q">Q</label>
+        <input type="number" class="form-control" id="Q" name="Q" />
+    </div>
+    <div class="form-group">
+        <label for="NapuskTO">Напуск на ТО</label>
+        <input type="number" class="form-control" id="NapuskTO" name="NapuskTO" />
+    </div>
+    <button type="submit" class="btn btn-primary">Расчет</button>
+</form>

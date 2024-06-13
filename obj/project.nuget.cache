@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "aL7ouZrE5sEAP/EB3z73T2f+IDzotlG7UTeaLtPd18RyqXiEqLmjDQ7Yxrg4cIqTRVlG6YmK2D9iNRaJ+23zEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\Forging_calculation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\educo\\.nuget\\packages\\aspose.cad\\24.5.0\\aspose.cad.24.5.0.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\messagepack\\2.5.140\\messagepack.2.5.140.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\messagepack.annotations\\2.5.140\\messagepack.annotations.2.5.140.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\microsoft.net.stringtools\\17.6.3\\microsoft.net.stringtools.17.6.3.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.0-preview.5.24306.7\\microsoft.win32.systemevents.9.0.0-preview.5.24306.7.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\system.drawing.common\\9.0.0-preview.5.24306.5\\system.drawing.common.9.0.0-preview.5.24306.5.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\system.formats.asn1\\8.0.0\\system.formats.asn1.8.0.0.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.0\\system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
+    "C:\\Users\\educo\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
