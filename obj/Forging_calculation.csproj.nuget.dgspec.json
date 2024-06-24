@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\Forging_calculation.csproj": {}
+    "D:\\Project\\RiderProject\\SPG_Test\\Forging_calculation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\Forging_calculation.csproj": {
+    "D:\\Project\\RiderProject\\SPG_Test\\Forging_calculation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\Forging_calculation.csproj",
+        "projectUniqueName": "D:\\Project\\RiderProject\\SPG_Test\\Forging_calculation.csproj",
         "projectName": "Forging_calculation",
-        "projectPath": "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\Forging_calculation.csproj",
-        "packagesPath": "C:\\Users\\educo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\educo\\RiderProjects\\Forging_calculation\\obj\\",
+        "projectPath": "D:\\Project\\RiderProject\\SPG_Test\\Forging_calculation.csproj",
+        "packagesPath": "C:\\Users\\Hors1T\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\RiderProject\\SPG_Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\educo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Hors1T\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -41,6 +46,30 @@
             "Aspose.CAD": {
               "target": "Package",
               "version": "[24.5.0, )"
+            },
+            "Aspose.Drawing.Common": {
+              "target": "Package",
+              "version": "[24.5.0, )"
+            },
+            "Aspose.OCR": {
+              "target": "Package",
+              "version": "[24.6.0, )"
+            },
+            "BricsCAD.19.BrxMgd": {
+              "target": "Package",
+              "version": "[19.2.0.13090, )"
+            },
+            "BricsCAD.19.TD_Mgd": {
+              "target": "Package",
+              "version": "[19.5.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0-preview.5.24306.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0-preview.5.24306.3, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
@@ -66,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\educo\\.dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Hors1T\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

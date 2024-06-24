@@ -5,11 +5,19 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\educo\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Hors1T\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.9.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\educo\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Hors1T\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0-preview.5.24306.3\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0-preview.5.24306.3\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)aspose.ocr\24.6.0\build\netstandard2.0\aspose.ocr.props" Condition="Exists('$(NuGetPackageRoot)aspose.ocr\24.6.0\build\netstandard2.0\aspose.ocr.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgBricsCAD_19_TD_Mgd Condition=" '$(PkgBricsCAD_19_TD_Mgd)' == '' ">C:\Users\Hors1T\.nuget\packages\bricscad.19.td_mgd\19.5.0</PkgBricsCAD_19_TD_Mgd>
+    <PkgBricsCAD_19_BrxMgd Condition=" '$(PkgBricsCAD_19_BrxMgd)' == '' ">C:\Users\Hors1T\.nuget\packages\bricscad.19.brxmgd\19.2.0.13090</PkgBricsCAD_19_BrxMgd>
+  </PropertyGroup>
 </Project>

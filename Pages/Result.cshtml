@@ -1,0 +1,232 @@
+@page
+@model Forging_calculation.Pages.ResultModel
+
+@{
+    ViewData["Title"] = "Результаты расчета";
+}
+<html>
+<head>
+    <style>
+        img{
+            width: 700px;
+            height: 350px;
+            }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        .result{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 5px;
+        }
+        .main-result{
+            display: flex;
+        }
+        .size{
+            margin:10px auto;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Результаты расчета</h2>
+<p> H1 = @Model.Result.HeightWorkpiece</p>
+<p> H2 = @Model.Result.HeightWorkpieceSample</p>
+<div class="size">
+    <table border="1" align="center">
+        <tr>
+            <th>Расчет размеров поковки</th>
+            <th>Размер</th>
+            <th>Допуск на размер +-</th>
+            <th>б</th>
+            <th>+-Δ/2</th>
+        </tr>
+        <tr>
+            <td>Н заготовки = (Н1+б)+-Δ/2</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Height</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Deviation</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Deviation</td>
+        </tr>
+        <tr>
+            <td>Н заготовки с пробой = (Н2+б)+-Δ/2</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Height</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Deviation</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Deviation</td>
+        </tr>
+        <tr>
+            <td>D дет = D+напуск на ТО</td>
+            <td>@Model.Result.Diameter</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>D заг = (Д+б)+-Δ/2+нагрузк на ТО</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Diameter</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Deviation</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Deviation</td>
+        </tr>
+        <tr>
+            <td>D заг с пробой = (Д+б+)+-Δ/2+нагрузк на ТО</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Diameter</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Deviation</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Deviation</td>
+        </tr>
+        <tr>
+            <td>d дет = d-напуск на ТО</td>
+            <td>@Model.Result.HoleDiameter</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>d заг = (d дет-б)+-3(Δ/2)</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.HoleDiameter</td>
+            <td>@(Model.Result.ForgingSizeWorkpiece.Deviation*3)</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpiece.Deviation</td>
+        </tr>
+        <tr>
+            <td>d заг с пробой = (d дет-б)+-3(Δ/2)</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.HoleDiameter</td>
+            <td>@(Model.Result.ForgingSizeWorkpieceSample.Deviation*3)</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Allowance</td>
+            <td>@Model.Result.ForgingSizeWorkpieceSample.Deviation</td>
+        </tr>
+    </table>
+</div>
+<div class="main-result">
+    <div class="result">
+        <table border="1">
+            <tr>
+                <th>Расчет массы поковки без пробы</th>
+                <th>D</th>
+                <th>r</th>
+                <th>H</th>
+                <th>V</th>
+                <th>m диск</th>
+                <th>m диск с отв</th>
+            </tr>
+            <tr>
+                <td>Диск номинал</td>
+                <td>@Model.Result.ForgingMass.DiskNominal.Diameter</td>
+                <td>@Model.Result.ForgingMass.DiskNominal.Radius</td>
+                <td>@Model.Result.ForgingMass.DiskNominal.Height</td>
+                <td>@Model.Result.ForgingMass.DiskNominal.Volume</td>
+                <td>@Model.Result.ForgingMass.DiskNominal.Mass</td>
+                <td>@Model.Result.ForgingMass.MassNominal</td>
+                <td>Номинальная масса</td>
+            </tr>
+            <tr>
+                <td>Диск максимал</td>
+                <td>@Model.Result.ForgingMass.DiskMaximal.Diameter</td>
+                <td>@Model.Result.ForgingMass.DiskMaximal.Radius</td>
+                <td>@Model.Result.ForgingMass.DiskMaximal.Height</td>
+                <td>@Model.Result.ForgingMass.DiskMaximal.Volume</td>
+                <td>@Model.Result.ForgingMass.DiskMaximal.Mass</td>
+                <td>@Model.Result.ForgingMass.MassMaximal</td>
+                <td>Максимальная масса</td>
+            </tr>
+            <tr>
+                <td>Отверстие номинал</td>
+                <td>@Model.Result.ForgingMass.HoleNominal.Diameter</td>
+                <td>@Model.Result.ForgingMass.HoleNominal.Radius</td>
+                <td>@Model.Result.ForgingMass.HoleNominal.Height</td>
+                <td>@Model.Result.ForgingMass.HoleNominal.Volume</td>
+                <td>@Model.Result.ForgingMass.HoleNominal.Mass</td>
+            </tr>
+            <tr>
+                <td>Отверстие максимал</td>
+                <td>@Model.Result.ForgingMass.HoleMaximal.Diameter</td>
+                <td>@Model.Result.ForgingMass.HoleMaximal.Radius</td>
+                <td>@Model.Result.ForgingMass.HoleMaximal.Height</td>
+                <td>@Model.Result.ForgingMass.HoleMaximal.Volume</td>
+                <td>@Model.Result.ForgingMass.HoleMaximal.Mass</td>
+            </tr>
+        </table>
+        <h2>Результат — без пробы</h2>
+        <img src="/drawing?holeDiameter=@Model.Result.HoleDiameter
+                      &holeDiameterWorkpiece=@Model.Result.ForgingSizeWorkpiece.HoleDiameter
+                      &diameter=@Model.Result.Diameter
+                      &diameterWorkpiece=@Model.Result.ForgingSizeWorkpiece.Diameter
+                      &height=@Model.Result.Height
+                      &heightWorkpiece=@Model.Result.ForgingSizeWorkpiece.Height
+                      &nominalMass=@Model.Result.ForgingMass.MassNominal.ToString().Replace(',', '.')
+                      &maximalMass=@Model.Result.ForgingMass.MassMaximal.ToString().Replace(',', '.')
+                      &deviation=@Model.Result.ForgingSizeWorkpiece.Deviation" alt="Чертеж"/>
+    </div>
+    <div class="result">
+        <table border="1">
+            <tr>
+                <th>Расчет массы поковки с пробой</th>
+                <th>D</th>
+                <th>r</th>
+                <th>H</th>
+                <th>V</th>
+                <th>m диск</th>
+                <th>m диск с отв</th>
+            </tr>
+            <tr>
+                <td>Диск номинал</td>
+                <td>@Model.Result.ForgingMassSample.DiskNominal.Diameter</td>
+                <td>@Model.Result.ForgingMassSample.DiskNominal.Radius</td>
+                <td>@Model.Result.ForgingMassSample.DiskNominal.Height</td>
+                <td>@Model.Result.ForgingMassSample.DiskNominal.Volume</td>
+                <td>@Model.Result.ForgingMassSample.DiskNominal.Mass</td>
+                <td>@Model.Result.ForgingMassSample.MassNominal</td>
+                <td>Номинальная масса</td>
+            </tr>
+            <tr>
+                <td>Диск максимал</td>
+                <td>@Model.Result.ForgingMassSample.DiskMaximal.Diameter</td>
+                <td>@Model.Result.ForgingMassSample.DiskMaximal.Radius</td>
+                <td>@Model.Result.ForgingMassSample.DiskMaximal.Height</td>
+                <td>@Model.Result.ForgingMassSample.DiskMaximal.Volume</td>
+                <td>@Model.Result.ForgingMassSample.DiskMaximal.Mass</td>
+                <td>@Model.Result.ForgingMassSample.MassMaximal</td>
+                <td>Максимальная масса</td>
+            </tr>
+            <tr>
+                <td>Отверстие номинал</td>
+                <td>@Model.Result.ForgingMassSample.HoleNominal.Diameter</td>
+                <td>@Model.Result.ForgingMassSample.HoleNominal.Radius</td>
+                <td>@Model.Result.ForgingMassSample.HoleNominal.Height</td>
+                <td>@Model.Result.ForgingMassSample.HoleNominal.Volume</td>
+                <td>@Model.Result.ForgingMassSample.HoleNominal.Mass</td>
+            </tr>
+            <tr>
+                <td>Отверстие максимал</td>
+                <td>@Model.Result.ForgingMassSample.HoleMaximal.Diameter</td>
+                <td>@Model.Result.ForgingMassSample.HoleMaximal.Radius</td>
+                <td>@Model.Result.ForgingMassSample.HoleMaximal.Height</td>
+                <td>@Model.Result.ForgingMassSample.HoleMaximal.Volume</td>
+                <td>@Model.Result.ForgingMassSample.HoleMaximal.Mass</td>
+            </tr>
+        </table>
+
+        <h2>Результат — c пробой</h2>
+        <img src="/drawing?holeDiameter=@Model.Result.HoleDiameter
+                      &holeDiameterWorkpiece=@Model.Result.ForgingSizeWorkpieceSample.HoleDiameter
+                      &diameter=@Model.Result.Diameter
+                      &diameterWorkpiece=@Model.Result.ForgingSizeWorkpieceSample.Diameter
+                      &height=@Model.Result.Height
+                      &heightWorkpiece=@Model.Result.ForgingSizeWorkpieceSample.Height
+                      &nominalMass=@Model.Result.ForgingMassSample.MassNominal.ToString().Replace(',', '.')
+                      &maximalMass=@Model.Result.ForgingMassSample.MassMaximal.ToString().Replace(',', '.')
+                      &deviation=@Model.Result.ForgingSizeWorkpieceSample.Deviation" alt="Чертеж"/>
+    </div>
+</div>
+</body>
+</html>

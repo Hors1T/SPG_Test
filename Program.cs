@@ -1,4 +1,5 @@
 using Forging_calculation.Service;
+using Microsoft.EntityFrameworkCore;
 
 namespace Forging_calculation;
 
@@ -10,35 +11,36 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
-        var app = builder.Build();
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+        builder.Services.AddScoped<CalculationService>();
+        builder.Services.AddSingleton<DrawingService>();
+        var app = builder.Build();
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
-
-        app.UseAuthorization();
-
         app.MapRazorPages();
         app.UseAuthorization();
-
+        
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapRazorPages();
-            endpoints.MapControllerRoute(
-                name: "drawing",
-                pattern: "drawing",
-                defaults: new { controller = "Drawing", action = "Generate" });
+            if (endpoints != null)
+            {
+                endpoints.MapControllerRoute(
+                    name: "drawing",
+                    pattern: "drawing",
+                    defaults: new { controller = "Drawing", action = "Generate" });
+            }
         });
-        
         app.Run();
     }
 }

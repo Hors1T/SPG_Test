@@ -1,18 +1,32 @@
+using Forging_calculation.Models;
+using Forging_calculation.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Forging_calculation.Pages;
 
-public class IndexModel : PageModel
+public class Index : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    [BindProperty] public double D { get; set; }
 
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
+    [BindProperty] public double hd { get; set; }
 
-    public void OnGet()
+    [BindProperty] public double H { get; set; }
+
+    [BindProperty] public double x { get; set; }
+
+    [BindProperty] public double y { get; set; }
+
+    [BindProperty] public double z { get; set; }
+
+    [BindProperty] public double Q { get; set; }
+
+    [BindProperty] public double NapuskTO { get; set; }
+
+    public Result Result { get; private set; }
+
+    public IActionResult OnPost()
     {
+        return RedirectToPage("/Result", new { diameter = D, holeDiameter = hd, H = H, x = x, y = y, z = z, Q = Q, NapuskTO = NapuskTO });
     }
 }

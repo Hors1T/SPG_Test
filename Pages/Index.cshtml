@@ -1,14 +1,44 @@
-﻿@page
-@model IndexModel
+@page
+@model Forging_calculation.Pages.Index
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Анкета";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-<div>
-    <h1>Чертеж</h1>
-    <img src="/drawing" alt="Чертеж" />
-</div>
+<h2>Анкета</h2>
+
+<form method="post" asp-page="./Questionnaire">
+    <div class="form-group">
+        <label for="D">D</label>
+        <input asp-for="D" type="number" class="form-control" id="D" name="D" />
+    </div>
+    <div class="form-group">
+        <label for="hd">d</label>
+        <input asp-for="hd" type="number" class="form-control" id="hd" name="hd" />
+    </div>
+    <div class="form-group">
+        <label for="H">H</label>
+        <input asp-for="H" type="number" class="form-control" id="H" name="H" />
+    </div>
+    <div class="form-group">
+        <label for="x">x</label>
+        <input asp-for="x" type="number" class="form-control" id="x" name="x" />
+    </div>
+    <div class="form-group">
+        <label for="y">y</label>
+        <input asp-for="y" type="number" class="form-control" id="y" name="y" />
+    </div>
+    <div class="form-group">
+        <label for="z">z</label>
+        <input asp-for="z" type="number" class="form-control" id="z" name="z" />
+    </div>
+    <div class="form-group">
+        <label for="Q">Q</label>
+        <input asp-for="Q" type="number" class="form-control" id="Q" name="Q" />
+    </div>
+    <div class="form-group">
+        <label for="NapuskTO">Напуск на ТО</label>
+        <input asp-for="NapuskTO" type="number" class="form-control" id="NapuskTO" name="NapuskTO" />
+    </div>
+    <button type="submit" class="btn btn-primary">Расчет</button>
+</form>
